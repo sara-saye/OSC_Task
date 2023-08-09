@@ -1,0 +1,43 @@
+ubuntu@ubuntu:~$ mkdir "sara darwish"
+ubuntu@ubuntu:~$ cd "sara darwish"
+ubuntu@ubuntu:~/sara darwish$ mkdir Documents
+ubuntu@ubuntu:~/sara darwish$ cd Documents
+ubuntu@ubuntu:~/sara darwish/Documents$ touch file1.txt file2.txt file3.txt
+ubuntu@ubuntu:~/sara darwish/Documents$ ls
+file1.txt  file2.txt  file3.txt
+ubuntu@ubuntu:~/sara darwish/Documents$ cd ..
+ubuntu@ubuntu:~/sara darwish$ touch hidden_file
+ubuntu@ubuntu:~/sara darwish$ ls
+Documents hidden_file
+ubuntu@ubuntu:~/sara darwish$ cd Documents
+ubuntu@ubuntu:~/sara darwish/Documents$ nano 
+ubuntu@ubuntu:~/sara darwish/Documents$ nano
+ubuntu@ubuntu:~/sara darwish/Documents$ cat file1.txt
+Hello Osc
+Hello Osc
+Hello Osc
+Hello Osc
+ubuntu@ubuntu:~/sara darwish/Documents$ cd .. 
+ubuntu@ubuntu:~/sara darwish$ cd Documents
+ubuntu@ubuntu:~/sara darwish/Documents$ mkdir _
+ubuntu@ubuntu:~/sara darwish/Documents$ cd _
+ubuntu@ubuntu:~/sara darwish/Documents/_$ cd ....
+ubuntu@ubuntu:~/sara darwish$ cp -r Documents My_Documents
+ubuntu@ubuntu:~/sara darwish$ls
+Documents  hidden_file My_Documents
+ubuntu@ubuntu:~/sara darwish$ cd My_Documents 
+ubuntu@ubuntu:~/sara darwish/My_Documents$ ls
+_  file1  file1.txt file2.txt file3.txt
+ubuntu@ubuntu:~/sara darwish/My_Documents$ cd ..
+ubuntu@ubuntu:~/sara darwish$ cat hidden_file
+ubuntu@ubuntu:~/sara darwish$ cd Documents
+ubuntu@ubuntu:~/sara darwish/Documents$ mv file2.txt ~/"sara darwish"
+ubuntu@ubuntu:~/sara darwish/Documents$ mv file3.txt ~/"sara darwish"
+ubuntu@ubuntu:~/sara darwish/Documents$ cd ..
+ubuntu@ubuntu:~/sara darwish$ ls
+Documents  file2.txt  file3.txt  hidden_file  My_Dcuments
+ubuntu@ubuntu:~/sara darwish$ cd ..
+ubuntu@ubuntu:~$ rm -r "sara darwish"
+ubuntu@ubuntu:~$ ls
+Desktop   Downloads  Pictures  snap   Videos
+Documents Music      Public    Templates
