@@ -1,0 +1,49 @@
+osc@osc-virtual-machine:~$ useradd osc
+useradd: user 'osc' already exists
+osc@osc-virtual-machine:~$ sudo groupadd osc_group 
+[sudo] password for osc
+osc@osc-virtual-machine:~$sudo usermod -aG osc_group osc
+osc@osc-virtual-machine:~$id 
+uid=1000(osc) gid=1000(osc) groups=1000(osc),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),122(lpadmin),135(lxd),136(sambashare),1003(osc_group)
+osc@osc-virtual-machine:~$ sudo usermod -a -G sudo osc
+osc@osc-virtual-machine:~$ su osc
+password: 
+osc@osc-virtual-machine:~$ mkdir permision_practice
+osc@osc-virtual-machine:~$ cd permision_practice
+osc@osc-virtual-machine:~/permision_practice$ touch public_file .txt
+osc@osc-virtual-machine:~/permision_practice$ chmod a+rw public_file 
+osc@osc-virtual-machine:~/permision_practice$ ls -l public_file 
+-rw-rw-rw- 1 osc osc 0 Aug 21 16:25 public_file
+osc@osc-virtual-machine:~/permision_practice$ touch privete_file.txt 
+osc@osc-virtual-machine:~/permision_practice$ ls -l privete_file.txt 
+-rw-rw-r-- 1 osc osc 0 Aug 21 16:26 privete_file.txt
+osc@osc-virtual-machine:~/permision_practice$ chmod g-rw privete_file.txt 
+osc@osc-virtual-machine:~/permision_practice$ chmod o-r privete_file.txt 
+osc@osc-virtual-machine:~/permision_practice$ ls -l privete_file.txt 
+-rw------- 1 osc osc 0 Aug 21 16:26 privete_file.txt
+osc@osc-virtual-machine:~/permision_practice$ touch excutable_script.sh
+osc@osc-virtual-machine:~/permision_practice$ chmod o+rwx excutable_script.sh 
+osc@osc-virtual-machine:~/permision_practice$ chmod g+rx excutable_script.sh 
+osc@osc-virtual-machine:~/permision_practice$ ls -l excutable_script.sh 
+-rw-rwxrwx 1 osc osc 0 Aug 21 16:29 excutable_script.sh
+osc@osc-virtual-machine:~/permision_practice$ chmod g-w excutable_script.sh 
+osc@osc-virtual-machine:~/permision_practice$ ls -l excutable_script.sh 
+-rw-r-xrwx 1 osc osc 0 Aug 21 16:29 excutable_script.sh
+osc@osc-virtual-machine:~/permision_practice$ chown osc privete_file.txt 
+osc@osc-virtual-machine:~/permision_practice$ chgrp osc_group privete_file.txt 
+osc@osc-virtual-machine:~/permision_practice$ ls -l privete_file.txt 
+-rw------- 1 osc osc_group 0 Aug 21 16:26 privete_file.txt
+sc@osc-virtual-machine:~$ sleep 1000
+^Z
+[4]+  Stopped                 sleep 1000
+osc@osc-virtual-machine:~$ vim
+
+[5]+  Stopped                 vim
+osc@osc-virtual-machine:~$ killall vim
+osc@osc-virtual-machine:~$ 
+
+
+
+
+
+
